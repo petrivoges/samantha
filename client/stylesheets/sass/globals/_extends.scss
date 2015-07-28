@@ -1,0 +1,246 @@
+//colors
+$color_silver_chalice_approx: #aaa;
+$color_gallery_approx: #eee;
+$color_mine_shaft_approx: #333;
+
+//fonts
+$font_0: Arial;
+$font_1: Verdana;
+$font_2: sans-serif;
+/*
+  Clearfix
+  via http://nicolasgallagher.com/micro-clearfix-hack
+*/
+%clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+* {
+  //Instead of the line below you could use @includebox-sizing($bs)
+  box-sizing: border-box;
+}
+html {
+  font-family: $font_0, $font_1, $font_2;
+}
+textarea {
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid $color_silver_chalice_approx;
+  // min-height: 200px;
+  padding: 20px;
+}
+button {
+  border: none;
+  background: $color_gallery_approx;
+  // padding: 10px 20px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  &.busy {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+h1 {
+  font-size: 22px;
+  color: $color_mine_shaft_approx;
+  font-weight: bold;
+  margin: 1em 0;
+}
+p {
+  margin: 1em 0;
+}
+body {
+  padding: 20px;
+}
+iframe.hidden-iframe {
+  width: 0;
+  height: 0;
+  border: none;
+  position: absolute;
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+//colors
+$color_curious_blue_approx: #3594cb;
+$color_malibu_approx: #6cbfee;
+$color_sail_approx: #afdcf8;
+$color_tiara_approx: #bdd0db;
+$white: #fff;
+$white_40: rgba(255,255,255,0.4);
+$color_shakespeare_approx: #46a4da;
+
+//fonts
+$font_0: ecoico;
+
+.cbp_tmtimeline {
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: $color_sail_approx;
+    left: 20%;
+    margin-left: -10px;
+  }
+  > li {
+    position: relative;
+    .cbp_tmtime {
+      display: block;
+      width: 25%;
+      padding-right: 100px;
+      position: absolute;
+      span {
+        display: block;
+        text-align: right;
+        &:first-child {
+          font-size: 0.9em;
+          color: $color_tiara_approx;
+        }
+        &:last-child {
+          font-size: 1.2em;
+          color: $color_curious_blue_approx;
+        }
+      }
+    }
+    &:nth-child(odd) {
+      .cbp_tmlabel {
+        background: $color_malibu_approx;
+        &:after {
+          border-right-color: $color_malibu_approx;
+        }
+      }
+      .cbp_tmtime span:last-child {
+        color: $color_malibu_approx;
+      }
+    }
+    .cbp_tmlabel {
+      margin: 0 0 15px 25%;
+      background: $color_curious_blue_approx;
+      color: $white;
+      padding: 1em;
+      font-size: 1.2em;
+      font-weight: 300;
+      line-height: 1.4;
+      position: relative;
+      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+      border-radius: 2px;
+      h2 {
+        margin-top: 0;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid $white_40;
+      }
+      &:after {
+        right: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: $color_curious_blue_approx;
+        border-width: 10px;
+        top: 10px;
+      }
+    }
+    .cbp_tmicon {
+      width: 40px;
+      height: 40px;
+      font-family: $font_0;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      font-size: 1.4em;
+      line-height: 40px;
+      position: absolute;
+      color: $white;
+      background: $color_shakespeare_approx;
+      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+      border-radius: 50%;
+      //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 8px $color_sail_approx;
+      text-align: center;
+      left: 20%;
+      top: 0;
+      margin: 0 0 0 -25px;
+    }
+  }
+}
+@media screen and(max-width: 65.375em) {
+  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 1.5em;
+  }
+}
+@media screen and(max-width: 47.2em) {
+  .cbp_tmtimeline {
+    &:before {
+      display: none;
+    }
+    > li {
+      .cbp_tmtime {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+        span {
+          text-align: left;
+        }
+      }
+      .cbp_tmlabel {
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+        &:after {
+          right: auto;
+          left: 20px;
+          border-right-color: transparent;
+          border-bottom-color: $color_curious_blue_approx;
+          top: -20px;
+        }
+      }
+      .cbp_tmicon {
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0;
+      }
+      &:nth-child(odd) .cbp_tmlabel:after {
+        border-right-color: transparent;
+        border-bottom-color: $color_malibu_approx;
+      }
+    }
+  }
+}
+.cbp_tmicon-phone:before {
+  content: "\e000";
+}
+.cbp_tmicon-screen:before {
+  content: "\e001";
+}
+.cbp_tmicon-mail:before {
+  content: "\e002";
+}
+.cbp_tmicon-earth:before {
+  content: "\e003";
+}

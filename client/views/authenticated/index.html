@@ -1,0 +1,13 @@
+<template name="index">
+    <textarea id="toSpeech" maxlength="100" type="text">Type what you want to say!</textarea>
+    <button class="btn btn-primary" id="openBtn">Sounds like</button>
+    <hr>
+  <form id="request-beta-invite" class="email-form">
+    <input type="email" name="emailAddress" class="form-control" placeholder="e.g. person@thisurl.com">
+    <hr>
+    <button type="submit" class="btn btn-warning" id="emailBtn">Send Email</button>
+  </form>
+  <ul class="cbp_tmtimeline">
+    {{>samList}}
+  </ul>
+</template>
